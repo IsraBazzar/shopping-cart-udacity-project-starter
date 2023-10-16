@@ -39,9 +39,9 @@ function drawCart() {
         `;
     });
     // use innerHTML so that cart products only drawn once
-    cart.length
-        ? (cartList.innerHTML = cartItems)
-        : (cartList.innerHTML = 'Cart Empty');
+    cart.length ?
+        (cartList.innerHTML = cartItems) :
+        (cartList.innerHTML = 'Cart Empty');
 }
 
 // Draws checkout
@@ -139,23 +139,23 @@ document.querySelector('.pay').addEventListener('click', (e) => {
 
 /* Standout suggestions */
 /* Begin remove all items from cart */
-// function dropCart(){
-//     let shoppingCart = document.querySelector('.empty-btn');
-//     let div = document.createElement("button");
-//     div.classList.add("empty");
-//     div.innerHTML =`Empty Cart`;
-//     shoppingCart.append(div);
-// }
-// dropCart();
+function dropCart() {
+    let shoppingCart = document.querySelector('.empty-btn');
+    let div = document.createElement("button");
+    div.classList.add("empty");
+    div.innerHTML = `Empty Cart`;
+    shoppingCart.append(div);
+}
+dropCart();
 
-// document.querySelector('.empty-btn').addEventListener('click', (e) => {
-//     if (e.target.classList.contains('empty')){
-//         emptyCart();
-//         drawCart();
-//         drawCheckout();
-//     }
-// })
-/* End all items from cart */
+document.querySelector('.empty-btn').addEventListener('click', (e) => {
+        if (e.target.classList.contains('empty')) {
+            emptyCart();
+            drawCart();
+            drawCheckout();
+        }
+    })
+    /* End all items from cart */
 
 /* Begin currency converter */
 // function currencyBuilder(){
